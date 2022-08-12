@@ -44,7 +44,11 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     :param denomination: int - the value of a single bill.
     :return: int - maximum value you can get.
     """
-    return int(0)
+    a = exchange_rate * (spread/100) + exchange_rate
+    b = int(budget / a)
+    c = int(b/denomination)
+    d = c * denomination
+    return d
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     """
@@ -55,4 +59,8 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     :param denomination: int - the value of a single bill.
     :return: int non-exchangeable value.
     """
-    return int(0)
+    a = exchange_rate * (spread/100) + exchange_rate
+    b = int(budget / a)
+    c = int(b/denomination)
+    d = c * denomination
+    return b - d
